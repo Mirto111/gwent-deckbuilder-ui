@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component} from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/App.css";
 import "./styles/cards-style.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect  } from "react-router-dom";
 import Header from "./ui/Header";
 import DeckBuilder from "./ui/DeckBuilder";
 import Decks from "./ui/Decks";
@@ -57,7 +57,7 @@ class App extends Component {
     return (
       <Router>
         <Header />
-        <Route exact path="/" component={DeckBuilder} />
+        <Redirect exact from="/" to="/deckbuilder" />
         <Route exact path="/decks" component={Decks} />
         <Route path="/deckbuilder" component={DeckBuilder} />
         <Route path="/decks/:id" component={DeckInfo} />
