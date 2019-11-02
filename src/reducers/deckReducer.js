@@ -1,14 +1,11 @@
-import { EDIT_DECK } from '../constants/actionTypes';
+import { EDIT_DECK } from "../constants/actionTypes";
 
-const INITIAL_STATE = { deck: {} };
+const INITIAL_STATE = {};
 
 function deckReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case EDIT_DECK: {
-      return {
-        ...state,
-        deck: action.deck
-      };
+      return Object.assign({}, action.deck);
     }
     default:
       return state;

@@ -5,7 +5,7 @@ const INITIAL_STATE = [];
 function cardReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case ADD_CARDS: {
-      return state=action.cards;
+      return action.cards;
     }
     default:
       return state;

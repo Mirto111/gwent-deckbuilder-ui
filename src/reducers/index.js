@@ -4,6 +4,7 @@ import cardReducer from './cardReducer';
 import leaderReducer from './leaderReducer';
 import filteredCardReducer from './filteredCardReducer';
 import deckReducer from './deckReducer';
+import deckAttributeReducer from './deckAttributeReducer';
 
 
 const rootReducer = combineReducers({
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
   cardState: cardReducer,
   leaderState: leaderReducer,
   filteredCardState: filteredCardReducer,
-  deckState: deckReducer
+  deckState: deckReducer,
+  deckAttrState: deckAttributeReducer
 });
 
 export default rootReducer;

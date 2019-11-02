@@ -9,9 +9,9 @@ function importAll(r) {
 }
 
 function imagesReducer(state = IMAGES, action) {
-  switch(action.type) {
-
-    default : return state;
+  switch (action.type) {
+    default:
+      return state;
   }
 }
 export default imagesReducer;

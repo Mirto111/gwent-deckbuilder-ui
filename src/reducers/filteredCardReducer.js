@@ -1,19 +1,19 @@
 import {
-  ADD_FILTERED_CARDS,
-  GET_FILTERS_CARDS
+  FILTERED_BY_FACTION,
+  FILTERED_BY_FACTION_AND_FILTER_GROUP
 } from "../constants/actionTypes";
 
 const INITIAL_STATE = { cards: [], filtered: [] };
 
 function filteredCardReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case ADD_FILTERED_CARDS: {
+    case FILTERED_BY_FACTION: {
       return {
         ...state,
         cards: action.cards
       };
     }
-    case GET_FILTERS_CARDS: {
+    case FILTERED_BY_FACTION_AND_FILTER_GROUP: {
       return {
         ...state,
         filtered: action.filtered
