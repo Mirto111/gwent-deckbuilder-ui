@@ -49,7 +49,7 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8080/api/cards")
+      .get("https://gwent-deckbuilder.herokuapp.com/api/cards")
       .then(response => this.partitionContent(response.data));
   }
 

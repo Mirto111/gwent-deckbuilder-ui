@@ -90,7 +90,7 @@ class DeckBuilder extends Component {
     nDeck.description = form.elements.description.value;
 
     axios
-      .post("http://localhost:8080/api/decks", nDeck)
+      .post("https://gwent-deckbuilder.herokuapp.com/api/decks", nDeck)
       .then(response => {
         this.setState({
           id: response.data._id,

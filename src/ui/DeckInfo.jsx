@@ -26,7 +26,7 @@ class DeckInfo extends Component {
   componentDidMount() {
     if (!this.props.location.fromDecks) {
       axios
-        .get("http://localhost:8080/api/decks/" + this.props.match.params.id)
+        .get("https://gwent-deckbuilder.herokuapp.com/api/decks/" + this.props.match.params.id)
         .then(response => this.transformResponse(response.data));
     }
   }

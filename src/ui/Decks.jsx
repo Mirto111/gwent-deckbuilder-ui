@@ -50,7 +50,7 @@ class Decks extends Component {
 
     let nDecks = decks;
 
-    axios.delete("http://localhost:8080/api/decks/" + id).then(response => {
+    axios.delete("https://gwent-deckbuilder.herokuapp.com/api/decks/" + id).then(response => {
       if (response.status == 200) {
         for (let i = 0; i < nDecks.length; i++) {
           if (nDecks[i]._id == id) {
@@ -68,7 +68,7 @@ class Decks extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:8080/api/decks").then(response =>
+    axios.get("https://gwent-deckbuilder.herokuapp.com/api/decks").then(response =>
       this.setState(() => {
         return {
           decks: response.data
