@@ -24,57 +24,158 @@ body {
   left: 0;
 }
 
+.cardImg {
+  width: 158px;
+  height: 227px;
+  position: relative;
+  border-radius: 3px;
+  top: 0;
+  left: 0;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
 .disabled {
   -webkit-filter: grayscale(100%);
 }
 
-.image2 {
+.cardTier {
   width: 160px;
   height: 229px;
   position: absolute;
   border-radius: 3px;
   top: 0;
   left: 0;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
 }
 
-.image3 {
+.leader {
+  background-image: url(../images/med/card-frame-leader.png);
+}
+.bronze {
+  background-image: url(../images/med/card-frame-bronze.png);
+}
+.gold {
+  background-image: url(../images/med/card-frame-gold.png);
+}
+
+.faction {
   width: 45px;
   height: 50px;
   position: absolute;
   top: 0;
   left: 0;
+  background-size: 100% 100%;
 }
 
-.image4 {
+.monster {
+  background-image: url(../images/med/card-banner-mo.png);
+}
+.neutral {
+  background-image: url(../images/med/card-banner-nt.png);
+}
+.nilfgaard {
+  background-image: url(../images/med/card-banner-ng.png);
+}
+.scoiatael {
+  background-image: url(../images/med/card-banner-sc.png);
+}
+.northern_realms {
+  background-image: url(../images/med/card-banner-nr.png);
+}
+.skellige {
+  background-image: url(../images/med/card-banner-sk.png);
+}
+.syndicate {
+  background-image: url(../images/med/card-banner-nt.png);
+}
+
+.rarity {
   width: 12px;
   height: 12px;
   position: absolute;
   top: 7px;
   left: 7px;
+  background-size: 100% 100%;
 }
 
-.image5 {
+.rare {
+  background-image: url(../images/med/rarity-rare.png);
+}
+.legendary {
+  background-image: url(../images/med/rarity-leg.png);
+}
+.epic {
+  background-image: url(../images/med/rarity-epic.png);
+}
+.common {
+  background-image: url(../images/med/rarity-common.png);
+}
+
+.factionProv {
   width: 25px;
   height: 33px;
   position: absolute;
   bottom: 3px;
   right: 1px;
+  background-size: 100% 100%;
 }
 
-.image6 {
+.monsterProv {
+  background-image: url(../images/med/cardns-mo.png);
+}
+.neutralProv {
+  background-image: url(../images/med/cardns-nt.png);
+}
+.nilfgaardProv {
+  background-image: url(../images/med/cardns-ng.png);
+}
+.scoiataelProv {
+  background-image: url(../images/med/cardns-sc.png);
+}
+.northern_realmsProv {
+  background-image: url(../images/med/cardns-nr.png);
+}
+.skelligeProv {
+  background-image: url(../images/med/cardns-sk.png);
+}
+.syndicateProv {
+  background-image: url(../images/med/cardns-nt.png);
+}
+
+.provisionImg {
   width: 25px;
   height: 25px;
   position: absolute;
   bottom: 34px;
   right: 1px;
+  background-size: 100% 100%;
+  background-image: url(../images/med/median.png);
 }
 
-.image7 {
+.cardType {
   position: absolute;
   width: 28px;
   height: 28px;
   top: 10px;
   left: 8px;
+  background-size: 100% 100%;
+}
+
+.unitType {
+  background-image: url(../images/med/card-banner-nt.png);
+}
+.spellType {
+  background-image: url(../images/med/media-spell1.png);
+}
+.artifactType {
+  background-image: url(../images/med/media.png);
+}
+.leaderType {
+  background-image: url(../images/med/media-leader.png);
 }
 
 @font-face {
@@ -174,41 +275,8 @@ h5 {
   padding: 10px;
 }
 
-.tooltip {
-  position: relative;
-  overflow: visible;
-}
-
 .tooltiptext {
   max-width: 300px;
-
-  /*     bottom: 100%;
-    left: 50%;
-    margin-left: -50%;
-    margin-right: -50%;  */
-}
-
-.tooltiptext-right {
-  visibility: hidden;
-  position: absolute;
-  top: -5px;
-  left: 105%;
-  z-index: 99;
-  min-width: 200px;
-  margin-right: -50%;
-}
-
-.tooltiptext::after {
-  content: " ";
-  display: block;
-}
-
-.deck-build__card:hover .tooltiptext-right {
-  visibility: visible;
-}
-
-.builder__card:hover .tooltiptext {
-  visibility: visible;
 }
 
 .cardTooltip {
@@ -225,9 +293,13 @@ h5 {
 }
 
 .cardPop {
+  top: 0;
+  left: 0;
   z-index: 99;
   position: absolute;
-
+  background-image: url(../images/med/card-text-popup.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   border-radius: 5px;
@@ -509,18 +581,28 @@ button {
   width: 103%;
   height: 100px;
   position: absolute;
-  border-radius: 3px;
   top: -4px;
   left: -2px;
+  background: url(../images/leader-frame.png) no-repeat;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .cardframe {
   width: 103%;
   height: 50px;
   position: absolute;
-  border-radius: 3px;
   top: -5px;
   left: -5px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.bronzeFrame {
+  background-image: url(../images/bronze-frame.png);
+}
+
+.goldFrame {
+  background-image: url(../images/golden-frame.png);
 }
 
 .deck-build__info {
@@ -624,45 +706,20 @@ button {
 }
 
 .deck-preview {
+  display: block;
+  color: #fadf8b;
+  width: 210px;
+  height: 301px;
+  background-size: cover;
   margin-right: 15px;
   margin-bottom: 15px;
 }
 
-.deck-preview:hover {
-  color: #fadf8b;
+.decklink:hover {
   text-decoration: none;
 }
 
-.deck-preview {
-  display: block;
-  width: 210px;
-  height: 301px;
-  background-size: cover;
-}
-
 .deck-preview__inner {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(10%, rgba(0, 0, 0, 0)),
-    to(rgba(17, 17, 17, 0.9))
-  );
-  background: -webkit-linear-gradient(
-    top,
-    rgba(0, 0, 0, 0) 10%,
-    rgba(17, 17, 17, 0.9) 100%
-  );
-  background: -o-linear-gradient(
-    top,
-    rgba(0, 0, 0, 0) 10%,
-    rgba(17, 17, 17, 0.9) 100%
-  );
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 10%,
-    rgba(17, 17, 17, 0.9) 100%
-  );
   padding: 20px 15px 15px;
   display: -ms-flexbox;
   display: flex;
@@ -671,25 +728,12 @@ button {
   -ms-flex-pack: end;
   justify-content: flex-end;
   height: 100%;
+  background: linear-gradient(180deg,transparent 10%,hsla(0,0%,7%,.9));
 }
 
 .deck-preview__name {
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 10px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-  max-height: 115px;
-  overflow: hidden;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-}
-
-.deck-preview__author {
-  color: #fff;
-}
-
-.deck-preview__date {
-  color: #fff;
   margin-bottom: 10px;
 }
 

@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import powerstar from "../images/med/star.png";
-import leadframe from "../images/leader-frame.png";
-import bronzeframe from "../images/bronze-frame.png";
-import goldenframe from "../images/golden-frame.png";
 import provicon from "../images/provision-icon.png";
 import cardicon from "../images/cards-icon.png";
 import uniticon from "../images/helmet-icon.png";
@@ -134,7 +131,7 @@ class Deck extends Component {
                 " "
               )}
             >
-              <img className="leadframe" alt="leadframe" src={leadframe} />
+              <div className="leadframe" />
               <div className="card-leader-info">
                 <div className="deck-build__leader-name">{leader.name}</div>
               </div>
@@ -166,19 +163,13 @@ class Deck extends Component {
                   handleClickDeck && (e => handleClickDeck(deck[item].card, e))
                 }
               >
-                {deck[item].card.cardTier === "Gold" ? (
-                  <img
-                    className="cardframe"
-                    alt="cardframe"
-                    src={goldenframe}
-                  />
-                ) : (
-                  <img
-                    className="cardframe"
-                    alt="cardframe"
-                    src={bronzeframe}
-                  />
-                )}
+                <div
+                  className={
+                    "cardframe " +
+                    deck[item].card.cardTier.toLowerCase() +
+                    "Frame"
+                  }
+                />
                 <div className="cardChoose">
                   <div className="deck-build__card-power">
                     {deck[item].card.strength > 0 ? (
@@ -218,11 +209,7 @@ const UpdatingPopover = React.forwardRef(
       <div ref={ref} {...pr}>
         <div className="tooltiptext">
           <div className="cardTooltip">
-            <img
-              className="cardPop"
-              alt="cardprovback"
-              src={images["./card-text-popup.png"]}
-            />
+            <div className="cardPop"></div>
             <div className="cardName">{item.name}</div>
             <div className="cardDesc">
               {" "}

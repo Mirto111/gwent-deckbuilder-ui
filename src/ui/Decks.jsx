@@ -50,31 +50,35 @@ class Decks extends Component {
 
     let nDecks = decks;
 
-    axios.delete("https://gwent-deckbuilder.herokuapp.com/api/decks/" + id).then(response => {
-      if (response.status == 200) {
-        for (let i = 0; i < nDecks.length; i++) {
-          if (nDecks[i]._id == id) {
-            nDecks.splice(i, 1);
-            break;
+    axios
+      .delete("https://gwent-deckbuilder.herokuapp.com/api/decks/" + id)
+      .then(response => {
+        if (response.status == 200) {
+          for (let i = 0; i < nDecks.length; i++) {
+            if (nDecks[i]._id == id) {
+              nDecks.splice(i, 1);
+              break;
+            }
           }
+          this.setState(() => {
+            return {
+              decks: nDecks
+            };
+          });
         }
-        this.setState(() => {
-          return {
-            decks: nDecks
-          };
-        });
-      }
-    });
+      });
   }
 
   componentDidMount() {
-    axios.get("https://gwent-deckbuilder.herokuapp.com/api/decks").then(response =>
-      this.setState(() => {
-        return {
-          decks: response.data
-        };
-      })
-    );
+    axios
+      .get("https://gwent-deckbuilder.herokuapp.com/api/decks")
+      .then(response =>
+        this.setState(() => {
+          return {
+            decks: response.data
+          };
+        })
+      );
   }
 
   render() {
@@ -86,14 +90,13 @@ class Decks extends Component {
           {decks.map(item => (
             <div className="deck-item" key={item._id}>
               <Link
-                to={{ pathname: "/decks/" + item._id,  fromDecks: true }}
+                className="decklink"
+                to={{ pathname: "/decks/" + item._id, fromDecks: true }}
                 onClick={() => this.handleClick(item)}
               >
                 <div className={"deck-preview _" + item.leader.image}>
                   <div className="deck-preview__inner">
                     <div className="deck-preview__name">{item.name}</div>
-                    <div className="deck-preview__author"></div>
-                    <div className="deck-preview__date"></div>
                   </div>
                 </div>
               </Link>
