@@ -1,6 +1,6 @@
 ## Декбилдер для игры в Гвинт(старая версия игры) - UI
 
-<h3>Посмотреть приложение можно здесь - <a href="https://gwent-deckbuilder-ui.herokuapp.com">https://gwent-deckbuilder-ui.herokuapp.com</a>( возможно придется подождать и пару раз перезагрузить страницу) </h3>
+<h3>Посмотреть приложение можно здесь - <a href="https://gwent-deckbuilder-ui.herokuapp.com">https://gwent-deckbuilder-ui.herokuapp.com</a> (возможно придется подождать и пару раз перезагрузить страницу) </h3>
 
 <p>Можно создавать, редактировать, удалять деку.</p>
 <p>Есть фильтр по разным категориям.</p>
